@@ -4,8 +4,15 @@ import os
 from time import sleep
 from ftplib import FTP
 import shutil
+import logging
+from datetime import datetime
 
 os.system('cls')
+
+file = open("datalog.log", "a")
+file.close()
+logging.basicConfig(filename='datalog.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(message)s\n\n')
+logger=logging.getLogger(__name__)
 
 HEADER = 1024
 ##Keyence port number need to check with KV Studio at Unit Editor --> check socket function need to be used --> Check Port No. (host link) --> 8501
@@ -56,7 +63,13 @@ for line in file:
     print(f"lines {count}:", line.strip())
 file.close()
 
-# print(LIST_SERVER)
+def log_record(error_msg):
+    file = open("datalog.log", "a")
+    now = datetime.now()
+    date_time = now.strftime("%d/%m/%Y %H:%M:%S")
+    print("Data recorded")
+    file.write(date_time + " " + error_msg + "\n")
+    file.close()
 
 ## DO FTP Operation which is Transferr data from PANEL to SERVER or LOCAL Computer
 def ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datareceived):
@@ -147,9 +160,11 @@ def start(list_SERVER):
         print(f"[CONNECTED] to {hostName} port {PORT} -->> \|^_^|/ ")
         return main(list_SERVER, machineName, hostName, transferHostname)
 
-    except (ConnectionRefusedError, TimeoutError, ConnectionAbortedError):
+    except (ConnectionRefusedError, TimeoutError, ConnectionAbortedError, OSError):
         os.system('cls')
-        print(f"[FAILED to CONNECT] SERVER:{hostName} PORT:{PORT} -->> (-_-!)")
+        error_msg = f"[FAILED to CONNECT] SERVER:{hostName} PORT:{PORT} -->> (-_-!)"
+        print(error_msg)
+        log_record(error_msg)
         sleep(2)
         starto(list_SERVER + 1)
 
@@ -183,34 +198,46 @@ def send(msg, list_SERVER, machineName, hostName, transferHostname):
     message = msg.encode(FORMAT)
     client.send(message)
     ReceivedData = client.recv(2048).decode(FORMAT)
-    datareceived = int(ReceivedData)
-    print(f"Response from {hostName} is {datareceived}")
 
-    if datareceived == 0:
-        print("DO NOT COPY DATA ==> MOVE TO OTHERS\n")
-        return starto(list_SERVER + 1)
+    if ReceivedData.isdigit() == True:
+        datareceived = int(ReceivedData)
+        print(f"Response from {hostName} is {datareceived}")
+        
+        if datareceived == 0:
+            print("DO NOT COPY DATA ==> MOVE TO OTHERS\n")
+            return starto(list_SERVER + 1)
 
-    elif datareceived == 1:
-        try:
-            global ftp
-            ftp = FTP(transferHostname)
-            status = ftp.login(FTP_USER, FTP_PASS)
-            return ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datareceived)
-        except:
-            print("FTP ERROR PLEASE CHECK USERNAME AND PASSWORD")
-            sleep(10)
+        elif datareceived == 1:
+            try:
+                global ftp
+                ftp = FTP(transferHostname)
+                status = ftp.login(FTP_USER, FTP_PASS)
+                return ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datareceived)
+            except Exception as error:
+                error_msg = f"FTP ERROR PLEASE CHECK USERNAME AND PASSWORD is it true username is {FTP_USER} pass is {FTP_PASS} ??"
+                print(error_msg)
+                logger.error(error)
+                log_record(error_msg)
+                sleep(10)
+                msg = "WR DM508.H 0\r"
+                message = msg.encode(FORMAT)
+                client.send(message)
+                return starto(list_SERVER + 1)
+        else:       
+            error_msg = f"Validation Invalid, Keyence Send Response other commad\nWhich is :{ReceivedData}"
+            print(error_msg)
+            log_record(error_msg)
+            print(f"Response : {datareceived}")
+            print(type(datareceived))
             msg = "WR DM508.H 0\r"
             message = msg.encode(FORMAT)
             client.send(message)
             return starto(list_SERVER + 1)
-    else:       
-        print("Validation Invalid")
-        print(f"Response : {datareceived}")
-        print(type(datareceived))
-        msg = "WR DM508.H 0\r"
-        message = msg.encode(FORMAT)
-        client.send(message)
+    else:
+        error_msg = f"[INVALID] Keyence send : {ReceivedData}"
+        log_record(error_msg)
         return starto(list_SERVER + 1)
+   
 
 ##STARING POINT TO SEND COMMAND AND CONVERT INTO UPPERCASE COMMAND
 def main(list_SERVER, machineName, hostName, transferhostName):
