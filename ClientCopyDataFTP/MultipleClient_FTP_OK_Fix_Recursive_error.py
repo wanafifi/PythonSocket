@@ -1,5 +1,7 @@
+from platform import platform
 import socket
-import sys
+import sys 
+import platform
 import os
 from time import sleep
 from ftplib import FTP
@@ -7,61 +9,76 @@ import shutil
 import logging
 from datetime import datetime
 
-os.system('cls')
-
 file = open("datalog.log", "a")
 file.close()
 logging.basicConfig(filename='datalog.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(message)s\n\n')
 logger=logging.getLogger(__name__)
 
-HEADER = 1024
-##Keyence port number need to check with KV Studio at Unit Editor --> check socket function need to be used --> Check Port No. (host link) --> 8501
-PORT = 8501 
-FORMAT = 'utf-8'
-LIST_SERVER = []
-FTP_USERNAME = []
-FTP_PASSWORD = []
-PROGRAM_PATH = []
-STOR_PATH = []
+try:
+    os_name = platform.system()
+    print(f"Platform is {os_name}")
 
-FTP_Setting = []
-ftpSetting = open("ftp_setting.ini", "r")
-count = 0
-for line in ftpSetting:
-    count+= 1
-    list_of_item = line.strip()
-    FTP_Setting.append(list_of_item)
-    print(f"lines {count}:", line.strip())
-    print(FTP_Setting)
-ftpSetting.close()
+    if os_name != "Darwin":
+        clear = 'cls'
+    else:
+        clear = 'clear'
+    os.system(clear)
 
-##Define FTP username and Password Program Location and Stor Location
-FTP_USERNAME = FTP_Setting[0].split(":")
-FTP_PASSWORD = FTP_Setting[1].split(":")
-PROGRAM_PATH = FTP_Setting[2].split(":", 1)
-STOR_PATH = FTP_Setting[3].split(":", 1)
+    HEADER = 1024
+    ##Keyence port number need to check with KV Studio at Unit Editor --> check socket function need to be used --> Check Port No. (host link) --> 8501
+    PORT = 8501 
+    FORMAT = 'utf-8'
+    LIST_SERVER = []
+    FTP_USERNAME = []
+    FTP_PASSWORD = []
+    CURRENT_PATH = os.getcwd()
+    print(CURRENT_PATH)
+    # PROGRAM_PATH = []
+    STOR_PATH = []
 
-if FTP_USERNAME[0] == "USER" and FTP_PASSWORD[0] == "PASS":
-    FTP_USER = FTP_USERNAME[1].strip()
-    FTP_PASS = FTP_PASSWORD[1].strip()
-    PATH_PROG = PROGRAM_PATH[1].strip()
-    PATH_STOR = STOR_PATH[1].strip()
+    FTP_Setting = []
+    ftpSetting = open("ftp_setting.ini", "r")
+    count = 0
+    for line in ftpSetting:
+        count+= 1
+        list_of_item = line.strip()
+        FTP_Setting.append(list_of_item)
+        print(f"lines {count}:", line.strip())
+        print(FTP_Setting)
+    ftpSetting.close()
 
-else:
-    print("PLEASE CHECK ftp_setting.ini")
+    ##Define FTP username and Password Program Location and Stor Location
+    FTP_USERNAME = FTP_Setting[0].split(":")
+    FTP_PASSWORD = FTP_Setting[1].split(":")
+    # PROGRAM_PATH = FTP_Setting[2].split(":", 1)
+    STOR_PATH = FTP_Setting[3].split(":", 1)
+
+    if FTP_USERNAME[0] == "USER" and FTP_PASSWORD[0] == "PASS":
+        FTP_USER = FTP_USERNAME[1].strip()
+        FTP_PASS = FTP_PASSWORD[1].strip()
+        # PATH_PROG = PROGRAM_PATH[1].strip()
+        PATH_PROG = CURRENT_PATH
+        PATH_STOR = STOR_PATH[1].strip()
+
+    else:
+        print("PLEASE CHECK ftp_setting.ini")
+        sleep(10)
+        sys.exit()
+
+    ##STARTING to real list of IP registered
+    file = open("server_and_ftp_list_ip.ini","r")
+    #Reading IP and Put into ARRAY 
+    count = 0 
+    for line in file:
+        count+= 1
+        list_of_item = line.strip()
+        LIST_SERVER.append(list_of_item)
+        print(f"lines {count}:", line.strip())
+    file.close()
+except Exception as error:
+    print("Program cannot be execute (!_-) ")
+    logger.error(error)
     sleep(10)
-    sys.exit()
-
-##STARTING to real list of IP registered
-file = open("server_and_ftp_list_ip.ini","r")
-#Reading IP and Put into ARRAY 
-count = 0 
-for line in file:
-    count+= 1
-    list_of_item = line.strip()
-    LIST_SERVER.append(list_of_item)
-    print(f"lines {count}:", line.strip())
-file.close()
 
 def log_record(error_msg):
     file = open("datalog.log", "a")
@@ -161,7 +178,7 @@ def start(list_SERVER):
         return main(list_SERVER, machineName, hostName, transferHostname)
 
     except (ConnectionRefusedError, TimeoutError, ConnectionAbortedError, OSError):
-        os.system('cls')
+        os.system(clear)
         error_msg = f"[FAILED to CONNECT] SERVER:{hostName} PORT:{PORT} -->> (-_-!)"
         print(error_msg)
         log_record(error_msg)
@@ -254,7 +271,7 @@ def main(list_SERVER, machineName, hostName, transferhostName):
 
 ##STARTING PROGRAM
 def starto(starting_number):
-    os.system("cls")
+    os.system(clear)
     countdown = starting_number
     server_list_count = len(LIST_SERVER)-1
     if countdown > server_list_count:
@@ -264,7 +281,7 @@ def starto(starting_number):
         print(f"--------------------")
         countdown = 1
         sleep(2)
-    os.system("cls")
+    os.system(clear)
     ServerCategory = []
     ServerCategory = LIST_SERVER[countdown].split("|")
     print(f"[CONNECTING] to {ServerCategory[0][:6]} \n[KEYENCE PLC]:{ServerCategory[1]} \n[PANEL]:{ServerCategory[2]}")
