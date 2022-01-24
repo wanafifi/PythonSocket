@@ -11,7 +11,7 @@ from datetime import datetime
 
 file = open("datalog.log", "a")
 file.close()
-logging.basicConfig(filename='datalog.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(message)s\n\n')
+logging.basicConfig(filename='datalog.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(message)s\n')
 logger=logging.getLogger(__name__)
 
 try:
@@ -61,7 +61,7 @@ try:
         FTP_CPY = FTP_COPY[1].strip()
         FTP_DLT = FTP_DELETE[1].strip()
         # PATH_PROG = PROGRAM_PATH[1].strip()
-        PATH_PROG = CURRENT_PATH
+        PATH_PROG = CURRENT_PATH + "/"
         PATH_STOR = STOR_PATH[1].strip()
 
     else:
@@ -79,16 +79,18 @@ try:
         LIST_SERVER.append(list_of_item)
         print(f"lines {count}:", line.strip())
     file.close()
+
 except Exception as error:
     print("Program cannot be execute (!_-) ")
     logger.error(error)
     sleep(10)
 
+## Record error print data 
 def log_record(error_msg):
     file = open("datalog.log", "a")
     now = datetime.now()
     date_time = now.strftime("%d/%m/%Y %H:%M:%S")
-    print("Data recorded")
+    print("[ERROR RECORDED]")
     file.write(date_time + " " + error_msg + "\n")
     file.close()
 
@@ -120,15 +122,15 @@ def ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datare
         count = 0
         while count < len(filelist):
             with open(filelist[count],"wb") as file:
-                if FTP_COPY.upper() == "YES" and FTP_DLT.upper() == "YES":
-                    ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}",file.write)
+                if FTP_COPY == "YES" and FTP_DLT == "YES":
+                    ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}", file.write)
                     print(filelist[count] + " ->> " + ftpcommand)
                     #DELETE FILE IN SD CARD KEYENCE VT5 IF NEEDED
                     ftpResponse = ftp.delete(filelist[count])
                     print(filelist[count] + " ->> " + ftpResponse)
 
-                elif FTP_CPY.upper() == "YES":
-                    ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}",file.write)
+                elif FTP_CPY == "YES":
+                    ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}", file.write)
                     print(filelist[count] + " ->> " + ftpcommand)
 
                 else:
@@ -219,7 +221,6 @@ def upperEverything(thingsToUpper):
         else:
             pass
         totalchar = totalchar + char
-
     return totalchar
 
 ## SEND COMMAND TO SERVER KV-8000
@@ -229,7 +230,7 @@ def send(msg, list_SERVER, machineName, hostName, transferHostname):
     client.send(message)
     ReceivedData = client.recv(2048).decode(FORMAT)
 
-    if ReceivedData.isdigit() == True:
+    if ReceivedData == "0000" or "0001":
         datareceived = int(ReceivedData)
         print(f"Response from {hostName} is {datareceived}")
         
@@ -244,7 +245,9 @@ def send(msg, list_SERVER, machineName, hostName, transferHostname):
                 status = ftp.login(FTP_USER, FTP_PASS)
                 return ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datareceived)
             except Exception as error:
-                error_msg = f"FTP ERROR PLEASE CHECK USERNAME AND PASSWORD is it true username is {FTP_USER} pass is {FTP_PASS} ??"
+                error_msg = f"FTP ERROR PLEASE CHECK USERNAME AND PASSWORD --> USER:{FTP_USER} PASS:{FTP_PASS} ??"
+                print(f"[IF OK] Another error --> {error}")
+                print(error)
                 print(error_msg)
                 logger.error(error)
                 log_record(error_msg)
@@ -254,18 +257,17 @@ def send(msg, list_SERVER, machineName, hostName, transferHostname):
                 client.send(message)
                 return starto(list_SERVER + 1)
         else:       
-            error_msg = f"Validation Invalid, Keyence Send Response other commad\nWhich is :{ReceivedData}"
+            error_msg = f"[INVALID VALIDATION] KV-8000 response other command :--> {ReceivedData}"
             print(error_msg)
             log_record(error_msg)
-            print(f"Response : {datareceived}")
-            print(type(datareceived))
-            msg = "WR DM508.H 0\r"
-            message = msg.encode(FORMAT)
-            client.send(message)
             return starto(list_SERVER + 1)
     else:
         error_msg = f"[INVALID] Keyence send : {ReceivedData}"
         log_record(error_msg)
+        print(f"Response : {ReceivedData}")
+        msg = "WR DM508.H 0\r"
+        message = msg.encode(FORMAT)
+        client.send(message)
         return starto(list_SERVER + 1)
    
 
