@@ -69,7 +69,7 @@ try:
 
     else:
         print("PLEASE CHECK ftp_setting.ini")
-        sleep(10)
+        # sleep(10)
         sys.exit()
 
     ##STARTING to real list of IP registered
@@ -106,11 +106,11 @@ def copyingdata(msg , list_SERVER, filelist, machineName):
                 message = msg.encode(FORMAT)
                 client.send(message)
                 print("Freezing for 10s")
-                sleep(10)
+                sleep(5)
                 client.close()
                 return list_SERVER + 1
             else:
-                sleep(1)
+                # sleep(1)
                 return False
 
 ## Record error print data 
@@ -133,7 +133,7 @@ def ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datare
             print('[LOGIN SUCCESS]')
             # ftp.retrlines('LIST')
             state = ftp.cwd("/VTWS/ID1/00000_00999/")
-            print(f"[DIRECTORY CHANGE] :{str(state)}")
+            print(f"[DIRECTORY CHANGE]:{str(state)}")
             # ftp.retrlines('LIST')
 
             # print(ftp.retrlines('LIST'))
@@ -158,18 +158,20 @@ def ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datare
                         print(filelist[count] + " ->> " + ftpcommand)
                         #DELETE FILE IN SD CARD KEYENCE VT5 IF NEEDED
                         ftpResponse = ftp.delete(filelist[count])
-                        # print(filelist[count] + " ->> " + ftpResponse)
+                        print(filelist[count] + " ->> " + ftpResponse)
 
                     elif FTP_CPY == "YES" and FTP_DLT == "NO":
                         ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}", file.write)
-                        # print(filelist[count] + " ->> " + ftpcommand)
+                        print(filelist[count] + " ->> " + ftpcommand)
 
                     else:
-                        error_msg = f"FTP don't copy and delete anything from this {machineName}, {transferHostname}"
+                        error_msg = f"[ERROR] FTP don't copy and delete anything from this {machineName}, {transferHostname}"
                         print(error_msg)
                         log_record(error_msg)
-                        error_msg = f"FTP COPY : {FTP_CPY} FTP DELETE :{FTP_DLT}"
+                        error_msg = f"[ERROR] FTP COPY : {FTP_CPY} FTP DELETE :{FTP_DLT}"
                         log_record(error_msg)
+                        sleep(10)
+                        sys.exit()
                 count+=1
             ftp.close()
 
@@ -189,7 +191,10 @@ def start():
     count = 1
     while count < len(LIST_SERVER):
         OPERATION_COUNT += 1
+        sleep(0.02)
         operation_file = open("operationcount.log", "w")
+        sleep(0.02)
+        os.system(clear)
         print(f"\n[OPERATION COUNT]:{str(OPERATION_COUNT)}")
         operation_file.write(f"[OPERATION COUNT] is : {str(OPERATION_COUNT)} Times ")
         operation_file.close()
@@ -203,7 +208,7 @@ def start():
         hostName = ActiveAddress[1]
         transferHostname = ActiveAddress[2]
         ADDR = (hostName, PORT)
-        sleep(1)
+        # sleep(1)
 
         try:
             ServerCategory = []
@@ -231,7 +236,7 @@ def start():
             logger.error(Error)
             print(error_msg)
             log_record(error_msg)
-            sleep(1)
+            # sleep(1)
             if count < len(LIST_SERVER):
                 count = 1
             else:
@@ -255,7 +260,7 @@ def send(msg, list_SERVER, machineName, hostName, transferHostname):
             if datareceived == 0:
                 print("DO NOT COPY DATA ==> MOVE TO OTHERS\n")
                 client.close()
-                sleep(1)
+                # sleep(1)
                 return list_SERVER + 1
 
             elif datareceived == 1:
@@ -278,7 +283,7 @@ def send(msg, list_SERVER, machineName, hostName, transferHostname):
                     print(error_msg)
                     logger.error(error)
                     log_record(error_msg)
-                    sleep(1)
+                    # sleep(1)
                     msg = "WR DM508.H 0\r"
                     message = msg.encode(FORMAT)
                     client.send(message)

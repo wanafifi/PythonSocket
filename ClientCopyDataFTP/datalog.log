@@ -1,121 +1,205 @@
-[FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 08:58:24 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 08:58:48 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 08:59:12 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 08:59:38 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:00:02 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:00:26 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:00:53 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:01:17 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:01:41 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:02:07 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:02:31 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:02:55 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:03:21 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:03:45 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:04:09 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:04:35 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:04:59 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:05:23 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:05:49 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:06:14 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:06:38 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:07:04 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:07:28 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:07:52 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:08:18 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:08:42 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:09:06 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:30:59 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:31:24 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:31:48 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:32:14 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:32:38 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:33:02 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:33:28 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:33:52 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:34:16 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:34:42 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:35:06 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:35:30 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:35:56 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:36:21 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:36:45 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:37:11 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:37:35 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:37:59 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:38:25 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:38:49 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:39:13 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:39:39 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:40:03 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:40:27 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:40:53 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:41:18 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:41:42 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:42:08 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:42:32 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:42:56 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:43:22 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:43:46 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:44:10 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:44:36 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:45:00 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:45:24 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:45:51 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:46:15 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:46:39 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:47:05 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:47:29 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:47:53 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:48:19 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:48:43 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:49:07 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:49:33 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:49:57 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:50:21 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:50:48 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:51:12 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:51:36 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:52:02 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:52:26 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:52:50 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:53:16 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:53:40 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:54:04 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:54:30 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:54:54 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:55:18 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:55:44 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 09:56:09 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 09:56:33 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 09:56:58 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 10:08:42 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 10:09:06 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 10:09:30 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 10:09:56 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 10:10:21 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 10:10:45 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 10:11:11 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 10:11:35 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 10:11:59 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 10:12:25 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 10:12:49 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 10:13:13 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 10:13:39 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 10:14:03 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 10:14:27 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 10:14:54 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 10:15:18 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 10:15:42 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 10:16:08 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 10:16:32 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 10:16:56 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 10:17:22 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-22/01/2022 10:17:46 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-22/01/2022 10:18:10 [FAILED to CONNECT] SERVER:10.30.34.13 PORT:8501 -->> (-_-!)
-22/01/2022 10:18:36 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-23/01/2022 14:00:33 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-23/01/2022 14:01:51 [FAILED to CONNECT] SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
-23/01/2022 14:14:28 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
-23/01/2022 14:16:22 [FAILED to CONNECT] SERVER:10.30.34.6 PORT:8501 -->> (-_-!)
+2022-01-24 15:33:30,158 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+24/01/2022 15:33:30 FTP ERROR PLEASE CHECK USERNAME AND PASSWORD --> USER:VT PASS:VT ??
+2022-01-24 15:41:10,394 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+24/01/2022 15:41:10 FTP ERROR PLEASE CHECK USERNAME AND PASSWORD --> USER:VT PASS:VT ??
+2022-01-24 15:48:27,829 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+24/01/2022 15:48:27 FTP ERROR PLEASE CHECK USERNAME AND PASSWORD --> USER:VT PASS:VT ??
+2022-01-24 15:51:10,797 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+24/01/2022 15:51:10 FTP ERROR PLEASE CHECK USERNAME AND PASSWORD --> USER:VT PASS:VT ??
+2022-01-24 15:56:13,759 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+24/01/2022 15:56:13 FTP ERROR PLEASE CHECK USERNAME AND PASSWORD --> USER:VT PASS:VT ??
+2022-01-24 15:58:02,523 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+24/01/2022 15:58:02 FTP ERROR PLEASE CHECK USERNAME AND PASSWORD --> USER:VT PASS:VT ??
+2022-01-24 16:19:30,295 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+24/01/2022 16:19:30 Error --> maximum recursion depth exceeded while calling a Python object
+2022-01-24 16:59:33,282 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+24/01/2022 16:59:33 Error --> maximum recursion depth exceeded while calling a Python object
+2022-01-24 17:02:49,952 ERROR __main__ maximum recursion depth exceeded while getting the str of an object
+
+24/01/2022 17:02:49 Error --> maximum recursion depth exceeded while getting the str of an object
+2022-01-24 17:03:27,264 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+24/01/2022 17:03:27 Error --> maximum recursion depth exceeded while calling a Python object
+2022-01-24 17:09:35,218 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+24/01/2022 17:09:35 Error --> maximum recursion depth exceeded while calling a Python object
+2022-01-24 17:15:49,011 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+24/01/2022 17:15:49 Error --> maximum recursion depth exceeded while calling a Python object
+2022-01-24 17:19:46,113 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+2022-01-24 17:39:54,815 ERROR __main__ [WinError 10053] An established connection was aborted by the software in your host machine
+
+24/01/2022 17:39:54 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-24 17:44:30,384 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+24/01/2022 17:44:30 Error --> maximum recursion depth exceeded while calling a Python object
+2022-01-24 17:45:55,230 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+2022-01-24 17:53:22,797 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+2022-01-24 18:01:29,800 ERROR __main__ maximum recursion depth exceeded while calling a Python object
+
+2022-01-25 11:28:58,811 ERROR __main__ copyingdata() takes 4 positional arguments but 5 were given
+
+25/01/2022 11:28:58 Error --> copyingdata() takes 4 positional arguments but 5 were given
+2022-01-25 11:31:44,092 ERROR __main__ copyingdata() takes 4 positional arguments but 5 were given
+
+25/01/2022 11:31:44 Error --> copyingdata() takes 4 positional arguments but 5 were given
+2022-01-25 11:36:43,073 ERROR __main__ list index out of range
+
+2022-01-25 11:37:42,614 ERROR __main__ list index out of range
+
+2022-01-25 11:44:00,614 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:44:00 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:46:13,368 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:46:13 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:47:11,492 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:47:11 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:49:46,499 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:49:46 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:51:45,924 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:51:45 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:52:12,027 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:52:12 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:54:29,194 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:54:29 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:55:49,209 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:55:49 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:57:10,895 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:57:10 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:57:33,955 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:57:33 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:57:57,023 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:57:57 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:58:20,096 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:58:20 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:58:43,162 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:58:43 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:59:06,220 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:59:06 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 11:59:57,141 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 11:59:57 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 12:00:23,233 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 12:00:23 [FAILED to CONNECT] MACHINE:TAP_17 SERVER:10.30.34.156 PORT:8501 -->> (-_-!)
+2022-01-25 12:04:17,223 ERROR __main__ list index out of range
+
+2022-01-25 12:05:01,359 ERROR __main__ list index out of range
+
+2022-01-25 12:11:54,336 ERROR __main__ 530 Permission denied.
+
+25/01/2022 12:11:54 Error --> 530 Permission denied.
+2022-01-25 12:14:25,570 ERROR __main__ 530 Permission denied.
+
+25/01/2022 12:14:25 Error --> 530 Permission denied.
+2022-01-25 12:14:47,757 ERROR __main__ 530 Permission denied.
+
+25/01/2022 12:14:47 Error --> 530 Permission denied.
+2022-01-25 12:15:22,067 ERROR __main__ 530 Permission denied.
+
+25/01/2022 12:15:22 Error --> 530 Permission denied.
+2022-01-25 12:16:38,948 ERROR __main__ 530 Permission denied.
+
+25/01/2022 12:16:38 Error --> 530 Permission denied.
+2022-01-25 12:17:18,536 ERROR __main__ 530 Permission denied.
+
+25/01/2022 12:17:18 Error --> 530 Permission denied.
+2022-01-25 12:23:45,166 ERROR __main__ 530 Permission denied.
+
+25/01/2022 12:23:45 Error --> 530 Permission denied.
+2022-01-25 12:26:49,764 ERROR __main__ 530 Permission denied.
+
+25/01/2022 12:26:49 Error --> 530 Permission denied. at TAP_05, SERVER: 10.30.34.5, PANEL: 10.30.34.15
+2022-01-25 12:28:58,614 ERROR __main__ 530 Permission denied.
+
+25/01/2022 12:28:58 Error --> 530 Permission denied. 
+At PANEL FTP:10.30.34.15 MACHINE:TAP_05 KV-8000 :10.30.34.5 
+2022-01-25 12:30:35,799 ERROR __main__ 530 Permission denied.
+
+25/01/2022 12:30:35 Error --> 530 Permission denied. At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-01-25 13:08:22,750 ERROR __main__ TextIOWrapper.write() takes exactly one argument (2 given)
+
+2022-01-25 13:09:01,566 ERROR __main__ I/O operation on closed file.
+
+2022-01-25 13:28:58,581 ERROR __main__ 530 Permission denied.
+
+25/01/2022 13:28:58 Error --> 530 Permission denied. At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-01-25 16:41:17,520 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:41:17 [FAILED to CONNECT] MACHINE:TAP_15 SERVER:10.30.34.154 PORT:8501 -->> (-_-!)
+2022-01-25 16:41:40,582 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:41:40 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:42:03,629 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:42:03 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:42:26,709 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:42:26 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:42:49,775 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:42:49 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:43:12,837 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:43:12 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:43:35,887 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:43:35 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:43:58,939 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:43:58 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:44:21,990 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:44:21 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:44:45,051 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:44:45 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:45:08,103 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:45:08 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:45:31,143 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:45:31 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:45:54,209 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:45:54 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:46:17,291 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:46:17 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:46:40,345 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:46:40 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:47:03,413 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+25/01/2022 16:47:03 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 16:47:12,637 ERROR __main__ [WinError 10053] An established connection was aborted by the software in your host machine
+
+25/01/2022 16:47:12 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-01-25 17:04:26,302 ERROR __main__ [Errno 13] Permission denied: 'operationcount.log'
+
+2022-01-25 17:11:22,436 ERROR __main__ [Errno 13] Permission denied: 'operationcount.log'
+
