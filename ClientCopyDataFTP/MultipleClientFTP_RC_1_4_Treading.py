@@ -121,7 +121,6 @@ def run_simultanious(list_server_index):
         else:
             pass
             # sleep(1)
-        return False
 
     ## Record error print data 
     def log_record(error_msg):
@@ -183,15 +182,14 @@ def run_simultanious(list_server_index):
                 count+=1
             ftp.close()
 
-            result = copyingdata(msg , list_SERVER, filelist , machineName)
+            copyingdata(msg , list_SERVER, filelist , machineName)
             client.close()
-            return result         
+        
         else:
             msg = "WR DM508.H 0\r"
             message = msg.encode(FORMAT)
             client.send(message)
             client.close()
-        return False
 
     ## SEND COMMAND TO SERVER KV-8000
     def send(msg, list_SERVER, machineName, hostName, transferHostname):
@@ -217,8 +215,7 @@ def run_simultanious(list_server_index):
                         ftp = FTP(transferHostname)
                         status = ftp.login(FTP_USER, FTP_PASS)
                         print(f"\n[LOGIN INTO {transferHostname}] MACHINE:{machineName[:6]}")
-                        list_SERVER = ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datareceived)
-                        return list_SERVER
+                        ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datareceived)
 
                 except Exception as error:
                     error_msg = f"Error --> {error} At PANEL FTP:{transferHostname} MACHINE:{machineName[:6]}"
@@ -243,13 +240,11 @@ def run_simultanious(list_server_index):
             message = msg.encode(FORMAT)
             client.send(message)
             client.close()
-        return False
 
     ## START SOCKET CONNECTION BETWEEN CLIENT AND SERVER KEYENCE KV-8000
     def start(list_server_index):
         print(list_server_index)
         count = list_server_index
-        end_time = time.time()
         # os.system(clear)
 
         ActiveAddress = []
@@ -273,11 +268,7 @@ def run_simultanious(list_server_index):
 
             COMMAND = "RD DM508.H"
             
-            count = send(COMMAND + "\r", count, machineName, hostName, transferHostname)
-
-            start_time = time.time()
-            print(f"[EXECUTE] TIME:{str(round(start_time - end_time,3))}s")
-            
+            send(COMMAND + "\r", count, machineName, hostName, transferHostname)
             
         except (ConnectionRefusedError, TimeoutError, ConnectionAbortedError, OSError) as Error:
             error_msg = f"[FAILED to CONNECT] MACHINE:{machineName.strip()[:6]} SERVER:{hostName} PORT:{PORT} -->> (-_-!)"
@@ -285,10 +276,13 @@ def run_simultanious(list_server_index):
             print(error_msg)
             log_record(error_msg)
             # sleep(1)
-        return False
-    #START THE PROGRAM   
+            
+    #START THE PROGRAM 
+    start_time = time.time()
     start(list_server_index)
     sleep(1)
+    end_time = time.time()
+    print(f"[EXECUTE] TIME:{str(round(start_time - end_time,3))}s")
     
 def start_all():
     threads = []
