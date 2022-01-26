@@ -2,12 +2,26 @@ from platform import platform
 import socket
 import sys
 import os
+import time
 from time import sleep
 from ftplib import FTP
 import shutil
 import logging
 from datetime import datetime
 import threading
+import platform
+
+global client
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+os_name = platform.system()
+print(f"Platform is {os_name}")
+if os_name != "Darwin":
+    clear = 'cls'
+else:
+    clear = 'clear'
+
+os.system(clear)
 
 file = open("datalog.log", "a")
 file.close()
@@ -15,14 +29,7 @@ logging.basicConfig(filename='datalog.log', level=logging.DEBUG, format='%(ascti
 logger=logging.getLogger(__name__)
 
 try:
-    os_name = platform.system()
-    print(f"Platform is {os_name}")
 
-    if os_name != "Darwin":
-        clear = 'cls'
-    else:
-        clear = 'clear'
-    os.system(clear)
 
     HEADER = 1024
     ##Keyence port number need to check with KV Studio at Unit Editor --> check socket function need to be used --> Check Port No. (host link) --> 8501
@@ -83,6 +90,9 @@ try:
         print(f"lines {count-1}:", line.strip())
     file.close()
 
+    print("LIST SERVER IS : ", LIST_SERVER)
+    print("LIST SERVER COUNT IS :", len(LIST_SERVER) - 1)
+
 except Exception as error:
     print("Program cannot be execute (!_-) ")
     logger.error(error)
@@ -92,6 +102,7 @@ except Exception as error:
 def run_simultanious(list_server_index):
     ###START MOVING COPIED FILE ,TO SERVER/LOCAL COMPUTER
     def copyingdata(msg , list_SERVER, filelist, machineName):
+        print("COPYING")
         print("[COPY] DATA TO SERVER......")    
         count = 0
         while count < len(filelist):
@@ -130,6 +141,7 @@ def run_simultanious(list_server_index):
 
     ## DO FTP Operation which is Transferr data from PANEL to SERVER or LOCAL Computer
     def ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datareceived):
+        print("FTP OPERATION")
         
         print("[STATUS]:" + status)
 
@@ -190,6 +202,7 @@ def run_simultanious(list_server_index):
 
     ## SEND COMMAND TO SERVER KV-8000
     def send(msg, list_SERVER, machineName, hostName, transferHostname):
+        print("SEND")
         # print(f"send msg : {msg} to {hostName}")
         message = msg.encode(FORMAT)
         client.send(message)
@@ -240,9 +253,10 @@ def run_simultanious(list_server_index):
 
     ## START SOCKET CONNECTION BETWEEN CLIENT AND SERVER KEYENCE KV-8000
     def start(list_server_index):
+        print("START")
         print(list_server_index)
         count = list_server_index
-        # os.system(clear)
+        os.system(clear)
 
         ActiveAddress = []
         ActiveAddress = LIST_SERVER[count].split("|")
@@ -257,14 +271,16 @@ def run_simultanious(list_server_index):
             ServerCategory = LIST_SERVER[count].split("|")
             print(f"[CONNECTING] to {ServerCategory[0][:6]} \n[KEYENCE PLC]:{ServerCategory[1]} \n[PANEL]:{ServerCategory[2]}")
             print(f"[ROUND]:{str(count)}")
-
-            global client
-            client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            print("masuk1")
+            # global client
+            # client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            print("masuk2")
+            print(ADDR)
+            sleep(0.01)
             client.connect(ADDR)
+            print("masuk3")
             print(f"[CONNECTED] to {hostName} port {PORT} -->> \|^_^|/ ")
-
             COMMAND = "RD DM508.H"
-            
             send(COMMAND + "\r", count, machineName, hostName, transferHostname)
             
         except (ConnectionRefusedError, TimeoutError, ConnectionAbortedError, OSError) as Error:
@@ -273,12 +289,14 @@ def run_simultanious(list_server_index):
             print(error_msg)
             log_record(error_msg)
             # sleep(1)
-            
+
+
+
     #START THE PROGRAM 
     start_time = time.time()
     start(list_server_index)
-    sleep(1)
     end_time = time.time()
+    time.sleep(1)
     print(f"[EXECUTE] TIME:{str(round(start_time - end_time,3))}s")
     
 def start_all():
@@ -286,16 +304,17 @@ def start_all():
     count = 1
     for _ in range(len(LIST_SERVER)-1):
         print(f"SERVER COUNT:{str(count)}")
-        t = threading.Thread(target = run_simultanious, args = (count,)).start()
+        t = threading.Thread(target = run_simultanious, args = (count,))
+        t.start()
         threads.append(t)
-        count += 1
         
+        # sleep(1)
+        count += 1
     for thread in threads:
-        tread.join()
+        thread.join()
     
 
 if __name__ == "__main__":
     while True:
     	start_all()
-        sleep(10)
 
