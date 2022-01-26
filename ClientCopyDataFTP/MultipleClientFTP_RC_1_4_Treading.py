@@ -1,15 +1,12 @@
 from platform import platform
 import socket
-import sys 
-import platform
+import sys
 import os
 from time import sleep
 from ftplib import FTP
 import shutil
 import logging
 from datetime import datetime
-import time
-import asyncio
 import threading
 
 file = open("datalog.log", "a")
@@ -302,19 +299,3 @@ def start_all():
 if __name__ == "__main__":
     	start_all()
 
-# async def main():
-#     count = 1
-#     while count <= len(LIST_SERVER)-1:
-#         asyncio.create_task(create_task(count))
-#         count+=1
-#     await asyncio.sleep(0.2)
-
-# def start_all():
-#     while True:
-#         asyncio.run(main())
-
-# start_all()
-# async def starting_point():
-#     while True:
-#         main()
-#         await asyncio.sleep(30)
