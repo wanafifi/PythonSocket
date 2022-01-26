@@ -288,14 +288,14 @@ def start_all():
         print(f"SERVER COUNT:{str(count)}")
         t = threading.Thread(target = run_simultanious, args = (count,)).start()
         threads.append(t)
-        if count <= len(LIST_SERVER) - 1:
-            count = 1
-        else:
-            count += 1
+        count += 1
         
     for thread in threads:
         tread.join()
+    
 
 if __name__ == "__main__":
+    while True:
     	start_all()
+        sleep(10)
 
