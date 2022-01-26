@@ -252,9 +252,6 @@ def run_simultanious(list_server_index):
         end_time = time.time()
         # os.system(clear)
 
-        # print("LISTSERVER :", len(LIST_SERVER))
-        # print("COUNT:", count)
-
         ActiveAddress = []
         ActiveAddress = LIST_SERVER[count].split("|")
         machineName = ActiveAddress[0]
@@ -289,27 +286,24 @@ def run_simultanious(list_server_index):
             log_record(error_msg)
             # sleep(1)
         return False
-    #START THE PROGRAM
-    sleep(2)    
+    #START THE PROGRAM   
     start(list_server_index)
-    return False
-
+    sleep(1)
+    
 def start_all():
+    threads = []
     count = 1
-    threads = list()
-    while count <= len(LIST_SERVER)-1:
-        try:
-            print(f"SERVER COUNT:{str(count)}")
-            print("data1")
-            threading.Thread(target = run_simultanious, args = (count,)).start()
-            time.sleep(1)
-            if count <= len(LIST_SERVER)-1:
-                time.sleep(2)
-                count = 1
-            else:
-                count += 1
-        except:
-            print("Tread cannot be run")
+    for _ in range(len(LIST_SERVER)-1):
+        print(f"SERVER COUNT:{str(count)}")
+        t = threading.Thread(target = run_simultanious, args = (count,)).start()
+        threads.append(t)
+        if count <= len(LIST_SERVER) - 1:
+            count = 1
+        else:
+            count += 1
+        
+    for thread in threads:
+        tread.join()
 
 if __name__ == "__main__":
     	start_all()
