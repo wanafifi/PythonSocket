@@ -10,7 +10,15 @@ import logging
 from datetime import datetime
 import time
 import asyncio
-import threading
+
+os_name = platform.system()
+print(f"Platform is {os_name}")
+
+if os_name != "Darwin":
+    clear = 'cls'
+else:
+    clear = 'clear'
+os.system(clear)
 
 file = open("datalog.log", "a")
 file.close()
@@ -18,15 +26,6 @@ logging.basicConfig(filename='datalog.log', level=logging.DEBUG, format='%(ascti
 logger=logging.getLogger(__name__)
 
 try:
-    os_name = platform.system()
-    print(f"Platform is {os_name}")
-
-    if os_name != "Darwin":
-        clear = 'cls'
-    else:
-        clear = 'clear'
-    os.system(clear)
-
     HEADER = 1024
     ##Keyence port number need to check with KV Studio at Unit Editor --> check socket function need to be used --> Check Port No. (host link) --> 8501
     PORT = 8501 
@@ -120,8 +119,6 @@ async def create_task(list_server_index):
             client.close()
         else:
             pass
-            # sleep(1)
-        return False
 
     ## Record error print data 
     def log_record(error_msg):
@@ -178,20 +175,18 @@ async def create_task(list_server_index):
                         log_record(error_msg)
                         error_msg = f"[ERROR] FTP COPY :{FTP_CPY} FTP DELETE :{FTP_DLT}"
                         log_record(error_msg)
-                        sleep(10)
-                        sys.exit()
+                        # sleep(10)
+                        # sys.exit()
                 count+=1
             ftp.close()
 
-            result = copyingdata(msg , list_SERVER, filelist , machineName)
-            client.close()
-            return result         
+            copyingdata(msg , list_SERVER, filelist , machineName)
+            client.close()        
         else:
             msg = "WR DM508.H 0\r"
             message = msg.encode(FORMAT)
             client.send(message)
             client.close()
-        return False
 
     ## SEND COMMAND TO SERVER KV-8000
     def send(msg, list_SERVER, machineName, hostName, transferHostname):
@@ -217,8 +212,7 @@ async def create_task(list_server_index):
                         ftp = FTP(transferHostname)
                         status = ftp.login(FTP_USER, FTP_PASS)
                         print(f"\n[LOGIN INTO {transferHostname}] MACHINE:{machineName[:6]}")
-                        list_SERVER = ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datareceived)
-                        return list_SERVER
+                        ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datareceived)
 
                 except Exception as error:
                     error_msg = f"Error --> {error} At PANEL FTP:{transferHostname} MACHINE:{machineName[:6]}"
@@ -243,14 +237,14 @@ async def create_task(list_server_index):
             message = msg.encode(FORMAT)
             client.send(message)
             client.close()
-        return False
+
 
     ## START SOCKET CONNECTION BETWEEN CLIENT AND SERVER KEYENCE KV-8000
     def start(list_server_index):
         print(list_server_index)
         count = list_server_index
         end_time = time.time()
-        os.system(clear)
+        # os.system(clear)
 
         # print("LISTSERVER :", len(LIST_SERVER))
         # print("COUNT:", count)
@@ -276,7 +270,7 @@ async def create_task(list_server_index):
 
             COMMAND = "RD DM508.H"
             
-            count = send(COMMAND + "\r", count, machineName, hostName, transferHostname)
+            send(COMMAND + "\r", count, machineName, hostName, transferHostname)
 
             start_time = time.time()
             print(f"[EXECUTE] TIME:{str(round(start_time - end_time,3))}s")
@@ -293,17 +287,33 @@ async def create_task(list_server_index):
 
     #START THE PROGRAM    
     start(list_server_index)
+    await asyncio.sleep(1)
+    print(f"DONE {str(list_server_index)}")
 
 async def main():
+    threads = []
     count = 1
     while count <= len(LIST_SERVER)-1:
-        asyncio.create_task(create_task(count))
+        t = asyncio.create_task(create_task(count))
+        threads.append(t)
         count+=1
-    await asyncio.sleep(0.2)
+    print(len(threads))
+    await asyncio.sleep(10)
+
+    
 
 def start_all():
-    while True:
-        asyncio.run(main())
+    round = 1
+    while round <= len(LIST_SERVER) - 1:
+        print("RUNNING1")
+        if round > len(LIST_SERVER) -1:
+            print("RUNNING2")
+            round = 1
+        else:
+            print("RUNNING3")
+            asyncio.run(main())
+            sleep(1)
+        round += 1
 
 start_all()
 # async def starting_point():
