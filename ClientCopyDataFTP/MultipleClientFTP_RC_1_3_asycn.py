@@ -65,7 +65,7 @@ try:
         FTP_CPY = FTP_COPY[1].strip().upper()
         FTP_DLT = FTP_DELETE[1].strip().upper()
         # PATH_PROG = PROGRAM_PATH[1].strip()
-        PATH_PROG = CURRENT_PATH + "/"
+        PATH_PROG = CURRENT_PATH + "\\"
         PATH_STOR = STOR_PATH[1].strip()
         PATH_FTP = FTP_PATH[1].strip()
 
@@ -91,14 +91,15 @@ except Exception as error:
     sleep(1)
 
 
-async def create_task(list_server_index):
+async def run_task(list_server_index):
     ###START MOVING COPIED FILE ,TO SERVER/LOCAL COMPUTER
-    def copyingdata(msg , list_SERVER, filelist, machineName):
+    def copyingdata(msg , list_SERVER, filelist, copyPath, machineName):
         print("[COPY] DATA TO SERVER......")    
         count = 0
         while count < len(filelist):
             try:
-                shutil.move(PATH_PROG + filelist[count], PATH_STOR + machineName + "/" + filelist[count])
+                # shutil.move(PATH_PROG + filelist[count], PATH_STOR + machineName + "/" + filelist[count])
+                shutil.move(copyPath+filelist[count], PATH_STOR + machineName+ "/"+filelist[count])
             except Exception as Error:
                 logger.error(Error)
                 Error = f"[Error] try create folder {machineName}"
@@ -107,7 +108,8 @@ async def create_task(list_server_index):
                 os.makedirs(newPath)
                 Error = f"[Error] making folder {machineName} success"
                 log_record(Error)
-                shutil.move(PATH_PROG + filelist[count], PATH_STOR + machineName + "/" + filelist[count])   
+                # shutil.move(PATH_PROG  + filelist[count], PATH_STOR + machineName + "/" + filelist[count])  
+                shutil.move(copyPath+filelist[count], PATH_STOR + machineName+ "/"+filelist[count]) 
             count+=1
         
         if msg != False:
@@ -155,32 +157,50 @@ async def create_task(list_server_index):
             print(f"[COPY] from {machineName} :: {transferHostname}")
 
             ##START TRANSFER FILE FROM SD CARD VT5 KEYENCE TOUCH PANEL TO LOCAL COMPUTER
+            copyPath = os.path.join(PATH_PROG, f"{machineName}\\")
+            checkdir = os.path.isdir(copyPath)
+            if checkdir == False:
+                os.makedirs(copyPath)
+            else:
+                pass
             count = 0
+
             while count < len(filelist):
-                with open(filelist[count],"wb") as file:
-                    if FTP_COPY == "YES" or FTP_DLT == "YES":
-                        ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}", file.write)
-                        print(filelist[count] + " ->> " + ftpcommand)
-                        #DELETE FILE IN SD CARD KEYENCE VT5 IF NEEDED
-                        ftpResponse = ftp.delete(filelist[count])
-                        print(filelist[count] + " ->> " + ftpResponse)
+                # file = open(PATH_PROG+"\\"+ machineName + "\\" + filelist[count],"wb" )
+                file = open(copyPath + filelist[count],"wb" )
+                if FTP_COPY == "YES" or FTP_DLT == "YES":
+                    ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}", file.write)
+                    print(filelist[count] + " ->> " + ftpcommand)
+                    #DELETE FILE IN SD CARD KEYENCE VT5 IF NEEDED
+                    ftpResponse = ftp.delete(filelist[count])
+                    print(filelist[count] + " ->> " + ftpResponse)
 
-                    elif FTP_CPY == "YES" and FTP_DLT == "NO":
-                        ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}", file.write)
-                        print(filelist[count] + " ->> " + ftpcommand)
+                elif FTP_CPY == "YES" and FTP_DLT == "NO":
+                    ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}", file.write)
+                    # copyPath = os.path.join(PATH_PROG, f"{machineName}\\")
+                    # checkdir = os.path.isdir(copyPath)
+                    # if checkdir == False:
+                    #     os.makedirs(copyPath)
+                    # else:
+                    #     pass
+                        
+                    ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}", file.write)
+                    print(filelist[count] + " ->> " + ftpcommand)
 
-                    else:
-                        error_msg = f"[ERROR] FTP don't copy and delete anything from this {machineName}, {transferHostname}"
-                        print(error_msg)
-                        log_record(error_msg)
-                        error_msg = f"[ERROR] FTP COPY :{FTP_CPY} FTP DELETE :{FTP_DLT}"
-                        log_record(error_msg)
-                        # sleep(10)
-                        # sys.exit()
+                else:
+                    error_msg = f"[ERROR] FTP don't copy and delete anything from this {machineName}, {transferHostname}"
+                    print(error_msg)
+                    log_record(error_msg)
+                    error_msg = f"[ERROR] FTP COPY :{FTP_CPY} FTP DELETE :{FTP_DLT}"
+                    log_record(error_msg)
+                    # sleep(10)
+                    # sys.exit()
                 count+=1
+            
+            file.close()
             ftp.close()
 
-            copyingdata(msg , list_SERVER, filelist , machineName)
+            copyingdata(msg , list_SERVER, filelist, copyPath , machineName)
             client.close()        
         else:
             msg = "WR DM508.H 0\r"
@@ -200,19 +220,16 @@ async def create_task(list_server_index):
             print(f"[RESPONSE] from {hostName} : {datareceived}")
             
             if datareceived == 0:
-                print("DO NOT COPY DATA ==> MOVE TO OTHERS\n")
+                print("DO NOT COPY DATA ==> MOVE TO OTHERS")
                 client.close()
 
             elif datareceived == 1:
                 try:
-                    if list_SERVER == len(LIST_SERVER):
-                        return False
-                    else:                
-                        global ftp
-                        ftp = FTP(transferHostname)
-                        status = ftp.login(FTP_USER, FTP_PASS)
-                        print(f"\n[LOGIN INTO {transferHostname}] MACHINE:{machineName[:6]}")
-                        ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datareceived)
+                    global ftp
+                    ftp = FTP(transferHostname)
+                    status = ftp.login(FTP_USER, FTP_PASS)
+                    print(f"\n[LOGIN INTO {transferHostname}] MACHINE:{machineName[:6]}")
+                    ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datareceived)
 
                 except Exception as error:
                     error_msg = f"Error --> {error} At PANEL FTP:{transferHostname} MACHINE:{machineName[:6]}"
@@ -241,9 +258,9 @@ async def create_task(list_server_index):
 
     ## START SOCKET CONNECTION BETWEEN CLIENT AND SERVER KEYENCE KV-8000
     def start(list_server_index):
-        print(list_server_index)
+        print(f"[START]:{str(list_server_index)}")
         count = list_server_index
-        end_time = time.time()
+        
         # os.system(clear)
 
         # print("LISTSERVER :", len(LIST_SERVER))
@@ -255,7 +272,7 @@ async def create_task(list_server_index):
         hostName = ActiveAddress[1]
         transferHostname = ActiveAddress[2]
         ADDR = (hostName, PORT)
-        # sleep(1)
+        sleep(1)
 
         try:
             ServerCategory = []
@@ -272,8 +289,8 @@ async def create_task(list_server_index):
             
             send(COMMAND + "\r", count, machineName, hostName, transferHostname)
 
-            start_time = time.time()
-            print(f"[EXECUTE] TIME:{str(round(start_time - end_time,3))}s")
+            
+            
             
             
         except (ConnectionRefusedError, TimeoutError, ConnectionAbortedError, OSError) as Error:
@@ -282,41 +299,51 @@ async def create_task(list_server_index):
             print(error_msg)
             log_record(error_msg)
             # sleep(1)
-        return False
 
-
+    start_time = time.time()
     #START THE PROGRAM    
     start(list_server_index)
+    if list_server_index == 1:
+        await asyncio.sleep(10)
+    end_time = time.time()
+    print(f"[EXECUTE]TIME:{str(round(end_time - start_time,3))}s\n")
     await asyncio.sleep(1)
     print(f"DONE {str(list_server_index)}")
 
 async def main():
     threads = []
     count = 1
+    START_time = time.time()
     while count <= len(LIST_SERVER)-1:
-        t = asyncio.create_task(create_task(count))
+        t = run_task(count)
         threads.append(t)
         count+=1
-    print(len(threads))
-    await asyncio.sleep(10)
+    await asyncio.gather(*threads)
+    print(f"[THREADS]:{str(len(threads))}")
+    END_time = time.time()
+    print(f"[ALL EXECUTE]TIME:{str(round(END_time - START_time,3))}s\n")
+    # await asyncio.sleep(30)
 
-    
+    # while count <= len(LIST_SERVER)-1:
+    #     t = asyncio.create_task(run_task(count))
+    #     threads.append(t)
+    #     count+=1
+    # print(f"[THREADS]:{str(len(threads))}")
+    # await asyncio.sleep(30)
+
 
 def start_all():
-    round = 1
-    while round <= len(LIST_SERVER) - 1:
-        print("RUNNING1")
-        if round > len(LIST_SERVER) -1:
-            print("RUNNING2")
-            round = 1
-        else:
-            print("RUNNING3")
-            asyncio.run(main())
-            sleep(1)
-        round += 1
+    asyncio.run(main())
+    # round = 1
+    # while round <= len(LIST_SERVER) - 1:
+    #     # print("RUNNING1")
+    #     if round >= len(LIST_SERVER) -1:
+    #         # print("RUNNING2")
+    #         round = 1    
+    #     else:
+    #         pass
+    #     asyncio.run(main())
+    #     # sleep(1)
+    #     round += 1
 
 start_all()
-# async def starting_point():
-#     while True:
-#         main()
-#         await asyncio.sleep(30)
