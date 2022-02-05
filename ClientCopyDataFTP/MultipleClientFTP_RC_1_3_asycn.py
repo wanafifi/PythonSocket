@@ -34,7 +34,6 @@ try:
     FTP_USERNAME = []
     FTP_PASSWORD = []
     CURRENT_PATH = os.getcwd()
-    print(CURRENT_PATH)
     STOR_PATH = []
     FTP_PATH = []
 
