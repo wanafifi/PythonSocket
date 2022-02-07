@@ -289,6 +289,7 @@ async def main():
         while count <= len(LIST_SERVER)-1:
             if count != len(LIST_SERVER)-1:
                 t = run_task(count)
+                threads.append(t)
                 count+=1
             else:
                 start_ready = 0
