@@ -22,7 +22,7 @@ os.system(clear)
 
 file = open("datalog.log", "a")
 file.close()
-logging.basicConfig(filename='datalog.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(message)s\n')
+logging.basicConfig(filename='datalog.log', level=logging.INFO, format='%(asctime)s %(levelname)s %(name)s %(message)s\n')
 logger=logging.getLogger(__name__)
 
 try:
@@ -36,6 +36,7 @@ try:
     CURRENT_PATH = os.getcwd()
     STOR_PATH = []
     FTP_PATH = []
+
 
     FTP_Setting = []
     ftpSetting = open("ftp_setting.ini", "r")
@@ -53,8 +54,8 @@ try:
     FTP_PASSWORD = FTP_Setting[1].split(":")
     FTP_COPY = FTP_Setting[2].split(":")
     FTP_DELETE = FTP_Setting[3].split(":")
-    STOR_PATH = FTP_Setting[5].split(":", 1)
-    FTP_PATH = FTP_Setting[6].split(":",1)
+    STOR_PATH = FTP_Setting[4].split(":", 1)
+    FTP_PATH = FTP_Setting[5].split(":",1)
 
     if FTP_USERNAME[0] == "USER" and FTP_PASSWORD[0] == "PASS":
         FTP_USER = FTP_USERNAME[1].strip()
@@ -99,38 +100,42 @@ async def run_task(list_server_index):
 
     ###START MOVING COPIED FILE ,TO SERVER/LOCAL COMPUTER
     def copyingdata(msg , filelist, transferPathTemp, machineName):
-        print("[COPY] DATA TO SERVER......")
-        # CHECK IF FILE APPEAR OR NOT
-        checkDir = os.path.isdir(PATH_STOR + machineName + "/")
-        if checkDir == False:
-            os.mkdir(checkDir)
-            pass    
-        else:
-            pass
+        try:
+            print("[COPY] DATA TO SERVER......")
+            # CHECK IF FILE APPEAR OR NOT
+            checkfile = PATH_STOR + machineName + "/"
+            checkDir = os.path.isdir(checkfile)
+            if checkDir == False:
+                os.mkdir(checkfile)
+                pass    
+            else:
+                pass
 
-        count = 0
-        while count < len(filelist):
-            try: 
-                shutil.move(transferPathTemp+filelist[count], PATH_STOR + machineName+ "/" + filelist[count])
-            except Exception as Error:
-                logger.error(Error)
-                # Error = f"[Error] try create folder {machineName}"
-                # log_record(Error)
-                # newPath = os.path.join(PATH_STOR, f"{machineName}")
-                # os.makedirs(newPath)
-                # Error = f"[Error] making folder {machineName} success"
-                log_record(Error) 
-                # shutil.move(transferPathTemp+filelist[count], PATH_STOR + machineName+ "/" + filelist[count]) 
-            count+=1
-        
-        if msg != False:
-            msg = "WR DM508.H 0\r"
-            message = msg.encode(FORMAT)
-            client.send(message)
-            print("Freezing for 30s")
-            client.close()
-        else:
-            pass
+            count = 0
+            while count < len(filelist):
+                try: 
+                    shutil.move(transferPathTemp+filelist[count], PATH_STOR + machineName+ "/" + filelist[count])
+                except Exception as Error:
+                    logger.error(Error)
+                    # Error = f"[Error] try create folder {machineName}"
+                    # log_record(Error)
+                    # newPath = os.path.join(PATH_STOR, f"{machineName}")
+                    # os.makedirs(newPath)
+                    # Error = f"[Error] making folder {machineName} success"
+                    log_record(Error) 
+                    # shutil.move(transferPathTemp+filelist[count], PATH_STOR + machineName+ "/" + filelist[count]) 
+                count+=1
+            
+            if msg != False:
+                msg = "WR DM508.H 0\r"
+                message = msg.encode(FORMAT)
+                client.send(message)
+                print("Freezing for 30s")
+                client.close()
+            else:
+                pass
+        except Exception as Error:
+            logger.error(Error)
 
     ## DO FTP Operation which is Transferr data from PANEL to SERVER or LOCAL Computer
     def ftpOperation(msg, list_SERVER, machineName, transferHostname, status, datareceived):
@@ -161,10 +166,11 @@ async def run_task(list_server_index):
             # LOOP TO TRANSFER EVERY FILE FILE FROM SD CARD VT5 KEYENCE TOUCH PANEL TO LOCAL COMPUTER
             count = 0
             while count < len(filelist):
-                file = open(transferPathTemp + filelist[count],"wb" )
+                print(transferPathTemp + filelist[count])
+                filer = open(transferPathTemp + filelist[count],"wb" )
                 if FTP_COPY == "YES" or FTP_DLT == "YES":
                     # RETRIEVE DATA FROM FTP SERVER
-                    ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}", file.write)
+                    ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}", filer.write)
                     print(filelist[count] + " ->> " + ftpcommand)
                     # DELETE FILE IN SD CARD KEYENCE VT5 IF NEEDED
                     ftpResponse = ftp.delete(filelist[count])
@@ -172,7 +178,7 @@ async def run_task(list_server_index):
 
                 elif FTP_CPY == "YES" and FTP_DLT == "NO":
                     # RETRIEVE DATA FROM FTP SERVER
-                    ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}", file.write)
+                    ftpcommand = ftp.retrbinary(f"RETR {filelist[count]}", filer.write)
                     print(filelist[count] + " ->> " + ftpcommand)
 
                 else:
@@ -182,7 +188,7 @@ async def run_task(list_server_index):
                     error_msg = f"[ERROR] FTP COPY :{FTP_CPY} FTP DELETE :{FTP_DLT}"
                     log_record(error_msg)
                 count+=1
-            file.close()
+            filer.close()
             ftp.close()
 
             copyingdata(msg , filelist, transferPathTemp , machineName)
@@ -243,7 +249,7 @@ async def run_task(list_server_index):
     ## START SOCKET CONNECTION BETWEEN CLIENT AND SERVER KEYENCE KV-8000
     def start(list_server_index):
         print(f"[START]:{str(list_server_index)}")
-        os.system(clear)
+        # os.system(clear)
 
         ActiveAddress = []
         ActiveAddress = LIST_SERVER[list_server_index].split("|")
@@ -280,29 +286,23 @@ async def run_task(list_server_index):
 
 async def main():
     threads = []
-    start_ready = 0
-    
-    while start_ready <= 1:
-        count = 1
-        START_time = time.time()
+    count = 1
+    START_time = time.time()
 
-        while count <= len(LIST_SERVER)-1:
-            if count != len(LIST_SERVER)-1:
-                t = run_task(count)
-                threads.append(t)
-                count+=1
-            else:
-                start_ready = 0
-                break
+    while count <= len(LIST_SERVER)-1:
+        t = run_task(count)
+        threads.append(t)
+        count+=1
 
-        await asyncio.gather(*threads)
-        print(f"[THREADS]:{str(len(threads))}")
-        END_time = time.time()
-        sleep(1)
-        print(f"[ALL EXECUTE]TIME:{str(round(END_time - START_time,3))}s\n")
+    await asyncio.gather(*threads)
+    print(f"[THREADS]:{str(len(threads))}")
+    END_time = time.time()
+    sleep(1)
+    print(f"[ALL EXECUTE]TIME:{str(round(END_time - START_time,3))}s\n")
 
 
 def start_all():
-    asyncio.run(main())
+    while True:
+        asyncio.run(main())
 
 start_all()
