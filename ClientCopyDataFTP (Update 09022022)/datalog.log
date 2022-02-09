@@ -1,0 +1,192 @@
+2022-02-08 12:24:48,399 ERROR __main__ 550 Failed to change directory.
+
+08/02/2022 12:24:48 Error --> 550 Failed to change directory. At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-08 13:27:40,037 ERROR __main__ local variable 'file' referenced before assignment
+
+08/02/2022 13:27:40 Error --> local variable 'file' referenced before assignment At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-08 13:31:20,966 ERROR __main__ local variable 'file' referenced before assignment
+
+08/02/2022 13:31:20 Error --> local variable 'file' referenced before assignment At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-08 13:33:32,990 ERROR __main__ 550 Failed to change directory.
+
+08/02/2022 13:33:32 Error --> 550 Failed to change directory. At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-08 13:34:18,803 ERROR __main__ local variable 'file' referenced before assignment
+
+08/02/2022 13:34:18 Error --> local variable 'file' referenced before assignment At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-08 13:38:42,797 ERROR __main__ local variable 'filer' referenced before assignment
+
+08/02/2022 13:38:42 Error --> local variable 'filer' referenced before assignment At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-08 13:39:15,126 ERROR __main__ local variable 'filer' referenced before assignment
+
+08/02/2022 13:39:15 Error --> local variable 'filer' referenced before assignment At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-08 13:40:07,065 ERROR __main__ local variable 'filer' referenced before assignment
+
+08/02/2022 13:40:07 Error --> local variable 'filer' referenced before assignment At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-08 13:40:28,279 ERROR __main__ local variable 'filer' referenced before assignment
+
+08/02/2022 13:40:28 Error --> local variable 'filer' referenced before assignment At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-08 13:43:29,664 ERROR __main__ local variable 'filer' referenced before assignment
+
+08/02/2022 13:43:29 Error --> local variable 'filer' referenced before assignment At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-08 13:45:40,063 ERROR __main__ local variable 'filer' referenced before assignment
+
+08/02/2022 13:45:40 Error --> local variable 'filer' referenced before assignment At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-09 09:30:53,568 ERROR __main__ local variable 'filer' referenced before assignment
+
+09/02/2022 09:30:53 Error --> local variable 'filer' referenced before assignment At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-09 09:31:55,137 ERROR __main__ local variable 'filer' referenced before assignment
+
+09/02/2022 09:31:55 Error --> local variable 'filer' referenced before assignment At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-09 09:33:47,490 ERROR __main__ local variable 'filer' referenced before assignment
+
+09/02/2022 09:33:47 Error --> local variable 'filer' referenced before assignment At PANEL FTP:10.30.34.15 MACHINE:TAP_05
+2022-02-09 09:34:20,306 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:34:20,306 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:34:24,853 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:34:24,853 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:34:29,396 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:34:29,396 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:34:33,964 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:34:33,965 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:34:38,488 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:34:38,488 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:34:43,044 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:34:43,044 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:34:47,614 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:34:47,614 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:34:52,170 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:34:52,170 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:34:56,729 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:34:56,729 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:35:01,468 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:35:01,468 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:35:06,208 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:35:06,208 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:35:10,971 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:35:10,971 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:35:15,755 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:35:15,755 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:35:20,500 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:35:20,500 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:35:25,044 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:35:25,044 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:35:29,634 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:35:29,635 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:35:34,174 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:35:34,174 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:35:38,794 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:35:38,794 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:35:43,335 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:35:43,336 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:35:47,898 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:35:47,898 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:35:52,419 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:35:52,419 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:35:56,987 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:35:56,987 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:36:01,557 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:36:01,557 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:36:06,120 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:36:06,121 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:36:10,706 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:36:10,707 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 09:36:15,256 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TAP_05_REJECTLOG\\WS00000WorkRecord220119105032.csv'
+
+2022-02-09 09:36:15,256 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 10:15:09,741 ERROR __main__ [WinError 10053] An established connection was aborted by the software in your host machine
+
+09/02/2022 10:15:09 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-02-09 15:10:57,977 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+09/02/2022 15:10:57 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-02-09 15:11:19,063 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+09/02/2022 15:11:19 [FAILED to CONNECT] MACHINE:TAP_15 SERVER:10.30.34.154 PORT:8501 -->> (-_-!)
+2022-02-09 15:11:40,123 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+09/02/2022 15:11:40 [FAILED to CONNECT] MACHINE:TAP_18 SERVER:10.30.34.155 PORT:8501 -->> (-_-!)
+2022-02-09 15:12:05,203 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+09/02/2022 15:12:05 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-02-09 15:12:26,283 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+09/02/2022 15:12:26 [FAILED to CONNECT] MACHINE:TAP_15 SERVER:10.30.34.154 PORT:8501 -->> (-_-!)
+2022-02-09 15:12:47,372 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+09/02/2022 15:12:47 [FAILED to CONNECT] MACHINE:TAP_18 SERVER:10.30.34.155 PORT:8501 -->> (-_-!)
+2022-02-09 15:13:12,452 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+09/02/2022 15:13:12 [FAILED to CONNECT] MACHINE:TAP_05 SERVER:10.30.34.5 PORT:8501 -->> (-_-!)
+2022-02-09 15:13:33,502 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+09/02/2022 15:13:33 [FAILED to CONNECT] MACHINE:TAP_15 SERVER:10.30.34.154 PORT:8501 -->> (-_-!)
+2022-02-09 15:13:54,555 ERROR __main__ [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+09/02/2022 15:13:54 [FAILED to CONNECT] MACHINE:TAP_18 SERVER:10.30.34.155 PORT:8501 -->> (-_-!)
+2022-02-09 16:48:01,305 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TEMP_TAP_05_REJECTLOG\\1.txt'
+
+2022-02-09 16:48:01,320 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 16:49:10,480 ERROR __main__ [Errno 2] No such file or directory: 'C:\\Users\\Admin\\Desktop\\PythonSocket-main\\ClientCopyDataFTP\\TEMP_TAP_05_REJECTLOG\\1.txt'
+
+2022-02-09 16:49:10,480 ERROR __main__ can only concatenate str (not "FileNotFoundError") to str
+
+2022-02-09 16:55:53,046 ERROR __main__ list index out of range
+
+2022-02-09 16:55:53,046 ERROR __main__ can only concatenate str (not "IndexError") to str
+
+2022-02-09 16:56:17,297 ERROR __main__ list index out of range
+
+2022-02-09 16:56:17,297 ERROR __main__ can only concatenate str (not "IndexError") to str
+
